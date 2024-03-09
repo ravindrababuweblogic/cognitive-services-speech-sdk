@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Deploy WordPress app to Azure Web App - speechiam
+name: Deploy WordPress app to Azure Web App - finaliam
 on:
   push:
     branches:
@@ -46,7 +46,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'speechiam'
+          app-name: 'finaliam'
           slot-name: 'staging'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_53103EDC04D3465AAF19B3DD8FF75099 }}
