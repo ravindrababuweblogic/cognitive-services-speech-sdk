@@ -23,7 +23,13 @@ jobs:
         with:
           name: wordpress-app
           path: release.zip
-
+          
+  deploy:
+    steps:
+    - template: ingestion_client.yaml
+          environment:
+            name: 'staging'
+            url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
   deploy:
     runs-on: ubuntu-latest
     needs: build
