@@ -9,6 +9,7 @@ speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=speech_re
 audio_config = speechsdk.AudioConfig(filename=audio_file_path)
 speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
 
+ print("Speak into your microphone.")
 result = speech_recognizer.recognize_once_async().get()
 
 if result.reason == speechsdk.ResultReason.RecognizedSpeech:
@@ -20,3 +21,4 @@ elif result.reason == speechsdk.ResultReason.Canceled:
     print("Speech Recognition canceled: {}".format(cancellation_details.reason))
     if cancellation_details.reason == speechsdk.CancellationReason.Error:
         print("Error details: {}".format(cancellation_details.error_details))
+         print("Did you set the speech resource key and region values?")
