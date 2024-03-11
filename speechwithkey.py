@@ -9,7 +9,7 @@ speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=speech_re
 audio_config = speechsdk.AudioConfig(filename=audio_file_path)
 speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
 
- print("Speak into your microphone.")
+print("Speak into your microphone.")
 result = speech_recognizer.recognize_once_async().get()
 
 if result.reason == speechsdk.ResultReason.RecognizedSpeech:
